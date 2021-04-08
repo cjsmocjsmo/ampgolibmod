@@ -122,7 +122,7 @@ type Tagmap struct {
 }
 
 // TAgMap exported
-func TAGmap(apath string) (TAGmap Tagmap) {
+func TaGmap(apath string) (TAGmap Tagmap) {
 	picpath := DumpArtToFile(apath)
 	zoo := Thumbnails(picpath)
 	fname, size := getFileInfo(apath)
