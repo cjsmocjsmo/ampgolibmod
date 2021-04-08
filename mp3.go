@@ -83,24 +83,24 @@ func DumpArtToFile(apath string) string {
 		// n2, err := f.Write(pic.Picture)
 		// CheckError(err, "outfile1 Write has fucked up")
 
-	// 	g, err := os.Create(outFile2)
-	// 	defer g.Close()
-	// 	if err != nil {
-	// 		fmt.Println(f)
-	// 		fmt.Println(outFile2)
-	// 		fmt.Println(err)
-	// 	}
-	// 	// CheckError(err, "outfile creation has fucked up")
-	// 	n3, err := g.Write(pic.Picture)
-	// 	CheckError(err, "outfile2 Write has fucked up")
+		g, err := os.Create(outFile2)
+		defer g.Close()
+		if err != nil {
+			fmt.Println(f)
+			fmt.Println(outFile2)
+			fmt.Println(err)
+		}
+		// CheckError(err, "outfile creation has fucked up")
+		n3, err := g.Write(pic.Picture)
+		CheckError(err, "outfile2 Write has fucked up")
 
-	// 	// fmt.Println(n2, "bytes written successfully")
-	// 	fmt.Println(n3, "bytes written successfully")
-	// }
+		// fmt.Println(n2, "bytes written successfully")
+		fmt.Println(n3, "bytes written successfully")
+	}
 	return outFile2
 }
 
-//Tagmap exported
+// Tagmap exported
 type Tagmap struct {
 	// ID bson.ObjectId `bson:"_id,omitempty"`
 	Dirpath   string `bson:"dirpath"`
@@ -121,31 +121,31 @@ type Tagmap struct {
 	Idx       string `bson:"idx"`
 }
 
-//TagMap exported
-func TagMap(apath string) (TagMap Tagmap) {
+// TAgMap exported
+func TAGmap(apath string) (TAGmap Tagmap) {
 	picpath := DumpArtToFile(apath)
 	zoo := Thumbnails(picpath)
 	fname, size := getFileInfo(apath)
 	artist, album, title, genre := getMetaData(apath)
-	TagMap.Dirpath = getDirPath(apath)
-	TagMap.Filename = fname
-	TagMap.Extension = getExtention(apath)
-	TagMap.FileID, _ = UUID()
-	TagMap.Filesize = size
-	TagMap.Artist = artist
-	TagMap.ArtistID = "None"
-	TagMap.Album = album
-	TagMap.AlbumID = "None"
-	TagMap.Title = title
-	TagMap.Genre = genre
-	TagMap.PicID = zoo.ImgID
-	TagMap.PicDB = "None"
-	TagMap.PicCol = "None"
-	TagMap.Idx = "None"
+	TAGmap.Dirpath = getDirPath(apath)
+	TAGmap.Filename = fname
+	TAGmap.Extension = getExtention(apath)
+	TAGmap.FileID, _ = UUID()
+	TAGmap.Filesize = size
+	TAGmap.Artist = artist
+	TAGmap.ArtistID = "None"
+	TAGmap.Album = album
+	TAGmap.AlbumID = "None"
+	TAGmap.Title = title
+	TAGmap.Genre = genre
+	TAGmap.PicID = zoo.ImgID
+	TAGmap.PicDB = "None"
+	TAGmap.PicCol = "None"
+	TAGmap.Idx = "None"
 
 	ses := DBcon()
 	defer ses.Close()
 	tagz := ses.DB("tempdb1").C("meta1")
-	tagz.Insert(TagMap)
-	return
+	tagz.Insert(TAGmap)
+	return TAGmap
 }
