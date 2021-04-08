@@ -71,10 +71,10 @@ func DumpArtToFile(apath string) string {
 			log.Fatal("Couldn't assert picture frame")
 		}
 
-		outFile2 := "./" + tag.Artist() + "_-_" + tag.Album() + ".jpg"
+		// outFile2 := "./" + tag.Artist() + "_-_" + tag.Album() + ".jpg"
 		// print("this is outfile")
 		// print(outFile)
-		// outFile2 = "/root/fsData/thumb/" + tag.Artist() + "_-_" + tag.Album() + ".jpg"
+		outFile2 = "/root/fsData/thumb/" + tag.Artist() + "_-_" + tag.Album() + ".jpg"
 		print("this is outfile2")
 		print(outFile2)
 		// f, err := os.Create(outFile)
