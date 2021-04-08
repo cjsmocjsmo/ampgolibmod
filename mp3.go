@@ -86,8 +86,62 @@ func DumpArtToFile(apath string) string {
 		g, err := os.Create(outFile2)
 		defer g.Close()
 		if err != nil {
-			fmt.Println(f)
-			fmt.Println(outFile2)
+			fmt.Println(f)// // TAgMap exported
+			// func TaGmap(apath string) (TAGmap Tagmap) {
+			// 	picpath := DumpArtToFile(apath)
+			// 	zoo := Thumbnails(picpath)
+			// 	fname, size := getFileInfo(apath)
+			// 	artist, album, title, genre := getMetaData(apath)
+			// 	TAGmap.Dirpath = getDirPath(apath)
+			// 	TAGmap.Filename = fname
+			// 	TAGmap.Extension = getExtention(apath)
+			// 	TAGmap.FileID, _ = UUID()
+			// 	TAGmap.Filesize = size
+			// 	TAGmap.Artist = artist
+			// 	TAGmap.ArtistID = "None"
+			// 	TAGmap.Album = album
+			// 	TAGmap.AlbumID = "None"
+			// 	TAGmap.Title = title
+			// 	TAGmap.Genre = genre
+			// 	TAGmap.PicID = zoo.ImgID
+			// 	TAGmap.PicDB = "None"
+			// 	TAGmap.PicCol = "None"
+			// 	TAGmap.Idx = "None"
+			
+			// 	ses := DBcon()
+			// 	defer ses.Close()
+			// 	tagz := ses.DB("tempdb1").C("meta1")
+			// 	tagz.Insert(TAGmap)
+			// 	return TAGmap
+			// }// // TAgMap exported
+// func TaGmap(apath string) (TAGmap Tagmap) {
+// 	picpath := DumpArtToFile(apath)
+// 	zoo := Thumbnails(picpath)
+// 	fname, size := getFileInfo(apath)
+// 	artist, album, title, genre := getMetaData(apath)
+// 	TAGmap.Dirpath = getDirPath(apath)
+// 	TAGmap.Filename = fname
+// 	TAGmap.Extension = getExtention(apath)
+// 	TAGmap.FileID, _ = UUID()
+// 	TAGmap.Filesize = size
+// 	TAGmap.Artist = artist
+// 	TAGmap.ArtistID = "None"
+// 	TAGmap.Album = album
+// 	TAGmap.AlbumID = "None"
+// 	TAGmap.Title = title
+// 	TAGmap.Genre = genre
+// 	TAGmap.PicID = zoo.ImgID
+// 	TAGmap.PicDB = "None"
+// 	TAGmap.PicCol = "None"
+// 	TAGmap.Idx = "None"
+
+// 	ses := DBcon()
+// 	defer ses.Close()
+// 	tagz := ses.DB("tempdb1").C("meta1")
+// 	tagz.Insert(TAGmap)
+// 	return TAGmap
+// }
+
 			fmt.Println(err)
 		}
 		// CheckError(err, "outfile creation has fucked up")
@@ -101,51 +155,51 @@ func DumpArtToFile(apath string) string {
 }
 
 // Tagmap exported
-type Tagmap struct {
-	// ID bson.ObjectId `bson:"_id,omitempty"`
-	Dirpath   string `bson:"dirpath"`
-	Filename  string `bson:"filename"`
-	Extension string `bson:"extension"`
-	FileID    string `bson:"fileID"`
-	Filesize  string `bson:"filesize"`
-	Artist    string `bson:"artist"`
-	ArtistID  string `bson:"artistID"`
-	Album     string `bson:"album"`
-	AlbumID   string `bson:"albumID"`
-	Title     string `bson:"title"`
-	Genre     string `bson:"genre"`
-	Page      string `bson:"page"`
-	PicID     string `bson:"picID"`
-	PicDB     string `bson:"picDB"`
-	PicCol    string `bson:"picCol"`
-	Idx       string `bson:"idx"`
-}
+// type Tagmap struct {
+// 	// ID bson.ObjectId `bson:"_id,omitempty"`
+// 	Dirpath   string `bson:"dirpath"`
+// 	Filename  string `bson:"filename"`
+// 	Extension string `bson:"extension"`
+// 	FileID    string `bson:"fileID"`
+// 	Filesize  string `bson:"filesize"`
+// 	Artist    string `bson:"artist"`
+// 	ArtistID  string `bson:"artistID"`
+// 	Album     string `bson:"album"`
+// 	AlbumID   string `bson:"albumID"`
+// 	Title     string `bson:"title"`
+// 	Genre     string `bson:"genre"`
+// 	Page      string `bson:"page"`
+// 	PicID     string `bson:"picID"`
+// 	PicDB     string `bson:"picDB"`
+// 	PicCol    string `bson:"picCol"`
+// 	Idx       string `bson:"idx"`
+// }
 
 // TAgMap exported
-func TaGmap(apath string) (TAGmap Tagmap) {
-	picpath := DumpArtToFile(apath)
-	zoo := Thumbnails(picpath)
-	fname, size := getFileInfo(apath)
-	artist, album, title, genre := getMetaData(apath)
-	TAGmap.Dirpath = getDirPath(apath)
-	TAGmap.Filename = fname
-	TAGmap.Extension = getExtention(apath)
-	TAGmap.FileID, _ = UUID()
-	TAGmap.Filesize = size
-	TAGmap.Artist = artist
-	TAGmap.ArtistID = "None"
-	TAGmap.Album = album
-	TAGmap.AlbumID = "None"
-	TAGmap.Title = title
-	TAGmap.Genre = genre
-	TAGmap.PicID = zoo.ImgID
-	TAGmap.PicDB = "None"
-	TAGmap.PicCol = "None"
-	TAGmap.Idx = "None"
+// func TaGmap(apath string) (TAGmap Tagmap) {
+// 	picpath := DumpArtToFile(apath)
+// 	zoo := Thumbnails(picpath)
+// 	fname, size := getFileInfo(apath)
+// 	artist, album, title, genre := getMetaData(apath)
+// 	TAGmap.Dirpath = getDirPath(apath)
+// 	TAGmap.Filename = fname
+// 	TAGmap.Extension = getExtention(apath)
+// 	TAGmap.FileID, _ = UUID()
+// 	TAGmap.Filesize = size
+// 	TAGmap.Artist = artist
+// 	TAGmap.ArtistID = "None"
+// 	TAGmap.Album = album
+// 	TAGmap.AlbumID = "None"
+// 	TAGmap.Title = title
+// 	TAGmap.Genre = genre
+// 	TAGmap.PicID = zoo.ImgID
+// 	TAGmap.PicDB = "None"
+// 	TAGmap.PicCol = "None"
+// 	TAGmap.Idx = "None"
 
-	ses := DBcon()
-	defer ses.Close()
-	tagz := ses.DB("tempdb1").C("meta1")
-	tagz.Insert(TAGmap)
-	return TAGmap
-}
+// 	ses := DBcon()
+// 	defer ses.Close()
+// 	tagz := ses.DB("tempdb1").C("meta1")
+// 	tagz.Insert(TAGmap)
+// 	return TAGmap
+// }
