@@ -74,7 +74,7 @@ func DumpArtToFile(apath string) string {
 		// outFile2 := "./" + tag.Artist() + "_-_" + tag.Album() + ".jpg"
 		// print("this is outfile")
 		// print(outFile)
-		outFile2 = "/root/fsData/thumb/" + tag.Artist() + "_-_" + tag.Album() + ".jpg"
+		outFile2 = "/root/thumb/" + tag.Artist() + "_-_" + tag.Album() + ".jpg"
 		print("this is outfile2")
 		print(outFile2)
 		// f, err := os.Create(outFile)
@@ -83,20 +83,20 @@ func DumpArtToFile(apath string) string {
 		// n2, err := f.Write(pic.Picture)
 		// CheckError(err, "outfile1 Write has fucked up")
 
-		g, err := os.Create(outFile2)
-		defer g.Close()
-		if err != nil {
-			fmt.Println(f)
-			fmt.Println(outFile2)
-			fmt.Println(err)
-		}
-		// CheckError(err, "outfile creation has fucked up")
-		n3, err := g.Write(pic.Picture)
-		CheckError(err, "outfile2 Write has fucked up")
+	// 	g, err := os.Create(outFile2)
+	// 	defer g.Close()
+	// 	if err != nil {
+	// 		fmt.Println(f)
+	// 		fmt.Println(outFile2)
+	// 		fmt.Println(err)
+	// 	}
+	// 	// CheckError(err, "outfile creation has fucked up")
+	// 	n3, err := g.Write(pic.Picture)
+	// 	CheckError(err, "outfile2 Write has fucked up")
 
-		// fmt.Println(n2, "bytes written successfully")
-		fmt.Println(n3, "bytes written successfully")
-	}
+	// 	// fmt.Println(n2, "bytes written successfully")
+	// 	fmt.Println(n3, "bytes written successfully")
+	// }
 	return outFile2
 }
 
