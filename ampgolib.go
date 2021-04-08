@@ -100,6 +100,7 @@ func visit(pAth string, f os.FileInfo, err error) error {
 	} else if ext == ".mp3" {
 		fmt.Println(pAth)
 		DumpArtToFile(pAth)
+		fmt.Println("fuck")
 		// TagMap(pAth)
 	} else {
 		fmt.Println("WTF are you? You must be a Dir")
