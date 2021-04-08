@@ -62,7 +62,7 @@ func InsArtistID(art string) {
 	TArtIc := sesC.DB("tempdb2").C("artistid")
 	uuid, _ := UUID()
 	DARTI := map[string]string{"artist": art, "artistid": uuid}
-	fmt.Printf("this is artistid %s", &DARTI)
+	// fmt.Printf("this is artistid %s", &DARTI)
 	TArtIc.Insert(&DARTI)
 }
 
